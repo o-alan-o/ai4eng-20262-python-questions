@@ -1,0 +1,17 @@
+Pregunta 4: Imputación por vecinos más cercanos y suavizado del Target
+
+El Problema:
+En un estudio clínico, los datos faltantes de los pacientes no ocurren al azar; un paciente sin datos en una prueba suele ser muy similar a otros pacientes de su misma edad y condición. Además, la variable objetivo (y, el costo del tratamiento) varía en órdenes de magnitud enormes, lo que desestabiliza el cálculo de errores.
+
+Tu Misión:
+Escribe una función llamada preparar_datos(df, target_col) que realice lo siguiente:
+
+1. En el DataFrame df, utilice el método de pandas .map() para convertir la columna categórica nivel_riesgo ('Bajo', 'Medio', 'Alto') a valores numéricos enteros (0, 1, 2).
+
+2. Separe las características (X) de la variable objetivo (y especificada por target_col).
+
+3. Impute todos los valores faltantes restantes en X utilizando la clase KNNImputer de sklearn (con n_neighbors=5).
+
+4. Aplique una transformación logarítmica a la variable objetivo y utilizando la función np.log1p() de numpy para lidiar con el amplio rango de valores.
+
+5. Devuelva la matriz X imputada y el vector y transformado.

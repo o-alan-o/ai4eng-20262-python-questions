@@ -1,0 +1,15 @@
+Pregunta 1: Distribuciones muy sesgadas y datos faltantes secuenciales
+
+El Problema:
+Trabajas con mediciones de sensores industriales donde los datos numéricos presentan un sesgo extremo (distribuciones no normales) que afecta el rendimiento de los modelos predictivos. Además, por micro-cortes de conexión, hay valores faltantes. Necesitas suavizar las distribuciones y rellenar los vacíos.
+
+Tu Misión:
+Escribe una función llamada preparar_datos(df, target_col) que realice lo siguiente:
+
+1. Rellene los valores faltantes en el DataFrame df utilizando una interpolación lineal de pandas (df.interpolate()).
+
+2. Separe las características (matriz X) de la variable objetivo (vector y especificado por target_col).
+
+3. Transforme la matriz X utilizando la clase PowerTransformer de sklearn con el método yeo-johnson para estabilizar la varianza y asemejar los datos a una distribución normal.
+
+4. Devuelva una tupla con la matriz X transformada y el vector y (ambos como arreglos de numpy).
