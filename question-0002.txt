@@ -1,0 +1,17 @@
+Pregunta 2: Discretización espacial no lineal
+
+El Problema:
+Tienes un conjunto de datos inmobiliarios que incluye variables continuas como las coordenadas geográficas (latitud y longitud). Los modelos lineales no logran capturar bien los efectos espaciales de los vecindarios, por lo que decides agrupar estas coordenadas en "cuadrículas" o "bins" discretos basados en la densidad de los datos.
+
+Tu Misión:
+Escribe una función llamada preparar_datos(df, target_col) que realice lo siguiente:
+
+1. Separe las características (X) de la variable objetivo (y).
+
+2. Seleccione exclusivamente las columnas latitud y longitud de X y las discretice usando la clase KBinsDiscretizer de sklearn (configurado con n_bins=10, encode='ordinal' y strategy='kmeans').
+
+3. Reemplace los valores originales de las columnas latitud y longitud en X con los valores discretizados.
+
+4. Convierta X y y a arreglos de numpy (usando .to_numpy()).
+
+5. Devuelva la matriz X procesada y el vector y.

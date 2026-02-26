@@ -1,0 +1,17 @@
+Pregunta 3: Combinación de metadatos numéricos y texto (NLP básico)
+
+El Problema:
+Tienes un DataFrame de productos con varias columnas numéricas (precio, peso, stock) y una columna de texto libre llamada descripcion. Necesitas vectorizar el texto para que el modelo pueda entenderlo y luego concatenar esas nuevas características con las numéricas originales.
+
+Tu Misión:
+Escribe una función llamada preparar_datos(df, target_col) que realice lo siguiente:
+
+1. Separe las características (X) de la variable objetivo (y).
+
+2. Extraiga la columna descripcion y la transforme utilizando TfidfVectorizer de sklearn (configurado con max_features=50). Asegúrate de convertir el resultado a un arreglo denso usando .toarray().
+
+3. Elimine la columna descripcion del DataFrame X y convierta las columnas numéricas restantes en un arreglo de numpy.
+
+4. Utilice la función np.hstack() (o np.concatenate()) de numpy para unir horizontalmente las características numéricas originales con la matriz de características de texto.
+
+5. Devuelva la matriz combinada X y el vector y.
